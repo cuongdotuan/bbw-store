@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+a{
+    color: white;
+    text-decoration: none; 
+}
+button{
+    background-color: #222222;
+    border: none;
+    cursor: pointer;
+}
+/*header*/
+.header{
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222222;
+    font-size: 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header p, span{
+    font-family: 'Pattaya', sans-serif;
+    font-size: 32px;
+    padding: 12px;
+}
+.header span{
+    padding-right: 0 ;
+}
+
+.header .options{
+    display: flex;
+    gap: 50px;
+}
+.header .options a{
+    
+    font-weight: 500;
+    padding: 12px;
+}
+.others button{
+    padding-left: 12px;
+}
+.others i{
+    font-size: 20px;
+}
+
+/*main*/
+main{
+    max-width: 1320px;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+img{
+    max-width: 100%;
+    ;
+}
+
+.image{
+    position: relative;
+    border-radius: 10px;
+    
+}
+
+.text{
+    position: absolute;
+    top: 84px;
+    left: 72px;
+}
+.text h1{
+    padding-bottom: 36px;
+    max-width: 50%;
+}
+.text p{
+    font-size: 24px;
+    max-width: 50%;
+}
+
