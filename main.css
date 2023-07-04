@@ -5,8 +5,11 @@
     font-family: sans-serif;
 }
 a{
-    color: white;
     text-decoration: none; 
+    color: black;
+}
+li{
+    list-style: none;
 }
 button{
     background-color: #222222;
@@ -28,7 +31,9 @@ button{
     left: 0;
     z-index: 100;
 }
-
+.header a{
+    color: white;
+}
 .header p, span{
     font-family: 'Pattaya', sans-serif;
     font-size: 32px;
@@ -57,7 +62,7 @@ button{
 /*main*/
 main{
     max-width: 1320px;
-    padding-top: 100px;
+    padding: 100px 0;
     margin: 0 auto;
 }
 img{
@@ -73,15 +78,37 @@ img{
 
 .text{
     position: absolute;
-    top: 84px;
+    top: 140px;
     left: 72px;
 }
 .text h1{
     padding-bottom: 36px;
     max-width: 50%;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 60px;
 }
 .text p{
     font-size: 24px;
     max-width: 50%;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+/*footer*/
+.footer{
+    max-width: 1320px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer h3{
+    margin-bottom: 16px;
+}
+.footer li{
+    line-height: 24px;
+}
+.footer i{
+    padding-right: 8px;
 }
 
