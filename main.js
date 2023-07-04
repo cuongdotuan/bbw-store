@@ -29,4 +29,42 @@ homePage.innerHTML = `
 </div>
 
 `
-document.querySelector('main').appendChild(homePage)
+document.querySelector('.container').appendChild(homePage)
+
+let footer = document.createElement('div')
+footer.classList.add('footer')
+footer.innerHTML = `
+<div>
+    <h3>BBW Store</h3>
+        <ul>
+            <li><i class="fa-solid fa-truck-fast" style="color: #adadad;"></i>Ship COD toàn quốc</li>
+            <li><i class="fa-solid fa-gift" style="color: #adadad;"></i>FREESHIP cho đơn hàng từ 500.000đ</li>
+        </ul>
+</div>
+<div class="contact">
+    <h3>Liên hệ</h3>
+    <ul>
+        <li><i class="fa-solid fa-location-dot" style="color: #adadad;"></i><b>Store</b>: 288 Giải Phóng - Thanh Xuân - Hà Nội</li>
+        <li><i class="fa-solid fa-phone" style="color: #adadad;"></i>096 189 42 00</li>
+        <li><i class="fa-regular fa-envelope" style="color: #adadad;"></i>bbwlocalbrand@gmail.com</li>
+    </ul>
+</div>
+<div class="information">
+    <h3>Thông tin</h3>
+    <ul>
+        <li><a href="policies/index.html">Chính sách bảo hành</a></li>
+        <li><a href="policies/index.html">Hình thức vận chuyển</a></li>
+        <li><a href="policies/index.html">Hình thức thanh toán</a></li>
+        <li><a href="policies/index.html">Đổi trả sản phẩm</a></li>
+    </ul>
+</div>
+<div class="link">
+    <h3>Theo dõi</h3>
+    <ul>
+        <li><a href="https://www.facebook.com/" target="_blank"><i class="fa-solid fa-link" style="color: #adadad;"></i>Facebook</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank"><i class="fa-solid fa-link" style="color: #adadad;"></i>Instagram</a></li>
+        <li><a href="https://www.youtube.com/" target="_blank"><i class="fa-solid fa-link" style="color: #adadad;"></i>Youtube</a></li>
+    </ul>
+</div>
+`
+document.querySelector('footer').appendChild(footer)
