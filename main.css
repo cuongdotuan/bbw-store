@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    outline: 0;
 }
 a{
     text-decoration: none; 
@@ -16,6 +17,7 @@ button{
     border: none;
     cursor: pointer;
 }
+
 /*header*/
 .header{
     width: 100%;
@@ -30,6 +32,7 @@ button{
     top: 0;
     left: 0;
     z-index: 100;
+    /* opacity: 0.3; */
 }
 .header a{
     color: white;
@@ -52,11 +55,28 @@ button{
     font-weight: 500;
     padding: 12px;
 }
+.others{
+    display: flex;
+    padding-right: 4px;
+}
+.others input{
+    padding: 4px 0 4px 4px;
+    border: none;
+    width: 80%;
+}
+.search{
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
 .others button{
     padding-left: 12px;
 }
 .others i{
     font-size: 20px;
+    padding: 6px 8px 6px 6px;
 }
 
 /*main*/
@@ -65,21 +85,37 @@ button{
     padding: 140px 0;
     margin: 0 auto;
 }
-img{
-    max-width: 100%;
-    ;
-}
 
-.image{
+
+/* .col-4{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 12px;
+}
+.col-6{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 12px;
+}
+.col-8{
+    flex: 0 0 66.66%;
+    max-width: 66.66%;
+    padding: 0 12px;
+} */
+.intro{
     position: relative;
-    border-radius: 10px;
-    
 }
-
+.image{
+    /* max-width: 80%; */
+    padding-top: calc(2/3*100%);
+    background: silver no-repeat center;
+    background-size: cover;
+    margin: 0 auto;
+}
 .text{
     position: absolute;
-    top: 140px;
-    left: 72px;
+    top: 120px;
+    left: 40px;
 }
 .text h1{
     padding-bottom: 36px;

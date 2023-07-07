@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    outline: 0;
+}
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+}
+.optionFilter{
+    margin-bottom: 40px;
+}
+
+.listItem{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-3{
+    flex: 0 25%;
+    max-width: 25%;
+    padding: 0 12px;
+}
+.image{
+    padding-top: calc(100%);
+    background: silver no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    
+}
+
+.item{
+    margin-bottom: 60px;
+    line-height: 28px;
+    position: relative;
+}
+.item a{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}

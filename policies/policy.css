@@ -35,8 +35,10 @@ main{
     max-width: 1320px;
     margin: 0 auto;  
 }
-
-.warranty h2{
+.mb-52{
+    margin-bottom: 52px;
+}
+.pb-52{
     padding-bottom: 52px;
 }
 .warranty div{
