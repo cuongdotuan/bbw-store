@@ -35,12 +35,19 @@ main{
     max-width: 1320px;
     margin: 0 auto;  
 }
-.mb-52{
-    margin-bottom: 52px;
+.mb-120{
+    margin-bottom: 120px;
 }
-.pb-52{
-    padding-bottom: 52px;
+.pb-40{
+    padding-bottom: 40px;
 }
-.warranty div{
+
+
+.lh-32{
     line-height: 32px;
+}
+
+.transportation table{
+    margin: 0 auto;
+    border: 1px solid black;
 }

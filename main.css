@@ -54,6 +54,11 @@ button{
     
     font-weight: 500;
     padding: 12px;
+    border-bottom: 1px solid #222222;
+}
+.options a:hover{
+    color: orange;
+    border-bottom: 1px solid orange;
 }
 .others{
     display: flex;
@@ -151,6 +156,7 @@ footer{
 
 .footer li{
     line-height: 24px;
+    margin-bottom: 6px;
 }
 .footer i{
     padding-right: 8px;
