@@ -49,10 +49,11 @@ async function renderProducts(products) {
                         <i class="fa-solid fa-plus" style="color: #000000;"></i>
                     </button>
                 </h4>
+                
                 <div class="option">
                     <ul>
-                        <li><button onclick="sortDescPrice()">Giá <i class="fa-solid fa-sort-down" style="color: #000000;"></i></button></li>
-                        <li><button onclick="sortAscPrice()">Giá <i class="fa-solid fa-sort-up" style="color: #000000;"></i></button></li>
+                        <li><button onclick="sortDescPrice()">Giá từ cao</button></li>
+                        <li><button onclick="sortAscPrice()">Giá từ thấp</button></li>
                         <li><button onclick="filterByBackpack()">Backpack</button></li>
                         <li><button onclick="filterByBag()">Bag</button></li>
                         <li><button onclick="filterByWallet()">Wallet</button></li>
@@ -70,7 +71,7 @@ async function renderProducts(products) {
         div.classList.add('col-3')
         div.innerHTML = `
         <div>
-            <div class="image" style="background-image: url(../photos/backpack/campus/thumbnail.jpg);"></div>
+            <div class="image" style="background-image: url(${imgs[0]});"></div>
             <h4><a href="#"></a>${name}</h4>
             <p>${formatPrice(price)}đ</p>
         </div>

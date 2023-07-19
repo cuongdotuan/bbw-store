@@ -51,10 +51,10 @@ button{
     gap: 50px;
 }
 .header .options a{
-    
     font-weight: 500;
     padding: 12px;
     border-bottom: 1px solid #222222;
+    font-family: 'Chakra Petch', sans-serif;
 }
 .options a:hover{
     color: orange;
