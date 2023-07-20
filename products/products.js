@@ -3,6 +3,19 @@ const endPoint = {
     products: 'products'
 }
 
+const loading = {
+    list(){
+        let div = document.createElement('div')
+        div.classList.add('placeHolder')
+        div.innerHTML = `
+        <div class="col-3 skeleton"></div>
+        <div class="col-3 skeleton"></div>
+        <div class="col-3 skeleton"></div>
+        <div class="col-3 skeleton"></div>
+        `
+        return div
+    }
+}
 function formatPrice(price) {
     return price.toLocaleString('vi-VN');
 }
@@ -40,15 +53,22 @@ async function fetchData(params) {
 }
 fetchData(productParams)
 
+async function removeLoader(){
+    if(document.querySelector('.placeHolder')){
+        document.querySelector('.placeHolder').remove()
+    }
+}
+
 async function renderProducts(products) {
     // document.querySelector('.container').innerHTML = ''
     document.querySelector('.container').innerHTML = `
     <div class="optionFilter">
-                <h4>TÌM THEO
-                    <button onclick="toggleUnhideClass()" style="border: none; background-color: #fff;">
-                        <i class="fa-solid fa-plus" style="color: #000000;"></i>
-                    </button>
-                </h4>
+                <div class="clickShowFilter" onclick="toggleUnhideClass()">
+                    <h4>TÌM THEO
+                    <i class="fa-solid fa-plus" style="color: #000000;"></i>
+                    </h4>
+                </div>
+                
                 
                 <div class="option">
                     <ul>
@@ -65,7 +85,7 @@ async function renderProducts(products) {
 
     `
     for (let product of products) {
-        let { imgs, name, price } = product
+        let { imgs, name, type, price } = product
         let div = document.createElement('div')
         div.classList.add('item')
         div.classList.add('col-3')
@@ -73,6 +93,7 @@ async function renderProducts(products) {
         <div>
             <div class="image" style="background-image: url(${imgs[0]});"></div>
             <h4><a href="#"></a>${name}</h4>
+            <p>${type}</p>
             <p>${formatPrice(price)}đ</p>
         </div>
         `
@@ -172,4 +193,4 @@ function filterByWallet(){
     fetchData(filterParams)
 }
 
-
+document.querySelector('container').appendChild(loading.list())
