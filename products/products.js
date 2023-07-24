@@ -4,18 +4,24 @@ const endPoint = {
 }
 
 const loading = {
-    list(){
+    list() {
         let div = document.createElement('div')
         div.classList.add('placeHolder')
         div.innerHTML = `
-        <div class="col-3 skeleton"></div>
-        <div class="col-3 skeleton"></div>
-        <div class="col-3 skeleton"></div>
-        <div class="col-3 skeleton"></div>
+        <div class="col-3-loading skeleton"></div>
+        <div class="col-3-loading skeleton"></div>
+        <div class="col-3-loading skeleton"></div>
+        <div class="col-3-loading skeleton"></div>
+        <div class="col-3-loading skeleton"></div>
+        <div class="col-3-loading skeleton"></div>
+        <div class="col-3-loading skeleton"></div>
+        <div class="col-3-loading skeleton"></div>
+        
         `
         return div
     }
 }
+
 function formatPrice(price) {
     return price.toLocaleString('vi-VN');
 }
@@ -24,11 +30,11 @@ let productParams = {
     endPoint: endPoint.products,
     method: 'GET',
     async callback(prds) {
-        // sort => sortedArr = [1 -> 10]
-
+        await removeLoader(prds)
         await renderProducts(prds)
     }
 }
+
 
 async function fetchData(params) {
     if (!params) {
@@ -53,8 +59,8 @@ async function fetchData(params) {
 }
 fetchData(productParams)
 
-async function removeLoader(){
-    if(document.querySelector('.placeHolder')){
+async function removeLoader() {
+    if (document.querySelector('.placeHolder')) {
         document.querySelector('.placeHolder').remove()
     }
 }
@@ -85,14 +91,14 @@ async function renderProducts(products) {
 
     `
     for (let product of products) {
-        let { imgs, name, type, price } = product
+        let { imgs, name, type, price, id } = product
         let div = document.createElement('div')
         div.classList.add('item')
         div.classList.add('col-3')
         div.innerHTML = `
         <div>
             <div class="image" style="background-image: url(${imgs[0]});"></div>
-            <h4><a href="#"></a>${name}</h4>
+            <h4><a href="#" onclick="detailProduct(${id})"></a>${name}</h4>
             <p>${type}</p>
             <p>${formatPrice(price)}đ</p>
         </div>
@@ -115,7 +121,7 @@ function sortDescPrice() {
             let sortedArr = arr.sort(function (a, b) {
                 return b.price - a.price
             })
-            
+
             await renderProducts(sortedArr)
         }
     }
@@ -132,41 +138,41 @@ function sortAscPrice() {
             let sortedArr = arr.sort(function (a, b) {
                 return a.price - b.price
             })
-            
+
             await renderProducts(sortedArr)
         }
     }
     fetchData(sortParams)
 }
 
-function filterByBackpack(){
+function filterByBackpack() {
     let filterParams = {
         apiUrl: apiUrl,
         endPoint: endPoint.products,
         method: 'GET',
         async callback(arr) {
-            
+
             let filteredArr = arr.filter(function (x) {
                 return x.type === 'backpack'
             })
-            
+
             await renderProducts(filteredArr)
         }
     }
     fetchData(filterParams)
 }
 
-function filterByBag(){
+function filterByBag() {
     let filterParams = {
         apiUrl: apiUrl,
         endPoint: endPoint.products,
         method: 'GET',
         async callback(arr) {
-            
+
             let filteredArr = arr.filter(function (x) {
                 return x.type === 'bag'
             })
-            if(filteredArr.length === 0){
+            if (filteredArr.length === 0) {
                 console.log('khong co')
             }
             await renderProducts(filteredArr)
@@ -176,21 +182,64 @@ function filterByBag(){
 }
 
 
-function filterByWallet(){
+function filterByWallet() {
     let filterParams = {
         apiUrl: apiUrl,
         endPoint: endPoint.products,
         method: 'GET',
         async callback(arr) {
-            
+
             let filteredArr = arr.filter(function (x) {
                 return x.type === 'wallet'
             })
-            
+
             await renderProducts(filteredArr)
         }
     }
     fetchData(filterParams)
 }
 
-document.querySelector('container').appendChild(loading.list())
+async function detailProduct(id) {
+    document.querySelector('.listItem').innerHTML = ''
+    let product = null
+    try {
+        const res = await fetch(apiUrl + endPoint.products + "/" + id)
+        product = await res.json()
+        console.log(product)
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
+
+    if(product === null) return
+
+    let {imgs, name, price, stock} = product
+    document.querySelector('.container').innerHTML = `
+    <div class="detailPage">
+        <div class="detailImage col-6"></div>
+        <div class="information col-6">
+            <h2 style="padding-bottom: 10px">${name}</h2>
+            <h4 style="padding-bottom: 24px">${formatPrice(price)} đ</h4>
+            <ul style="padding-bottom: 24px; line-height: 28px">
+                <li>Chất liệu: Vải Polyester cao cấp chống thấm nước<li>
+                <li>Nhiều ngăn nhỏ đựng đồ cá nhân<li>
+                <li>Có ngăn lấy đồ nhanh bên hông balo<li>
+            </ul>
+            
+            <div class="add">
+                <div class="quantity">
+                    <button><i class="fa-solid fa-minus" style="color: #000000;"></i></button>1<button><i class="fa-solid fa-plus" style="color: #000000;"></i></button>
+                </div>
+                <div class="addBtn"><p>Add to cart</p></div>
+            </div>
+            <div class="buyBtn"><p>Buy it now</p></div>
+        </div>
+    </div>
+    
+    `
+    
+
+
+}
+document.querySelector('.container').appendChild(loading.list())
