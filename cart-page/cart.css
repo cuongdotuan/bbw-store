@@ -1,27 +1,47 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     outline: 0;
     scroll-behavior: smooth;
 
 }
-a{
-    text-decoration: none; 
+p{
+    margin-bottom: 0;
+}
+a {
+    text-decoration: none;
     color: black;
 }
-li{
+
+li {
     list-style: none;
 }
-button{
+
+button {
     background-color: #222222;
     border: none;
     cursor: pointer;
 }
 
+.col-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 12px;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 12px;
+}
+.text-center{
+    text-align: center;
+}
+
 /*header*/
-.header{
+.header {
     width: 100%;
     padding: 0 24px;
     display: flex;
@@ -36,147 +56,132 @@ button{
     z-index: 100;
     /* opacity: 0.3; */
 }
-.header a{
+
+.header a {
     color: white;
 }
-header p{
-    margin-bottom: 0;
-}
-.header p, span{
+
+.header p,
+span {
     font-family: 'Pattaya', sans-serif;
     font-size: 48px;
     padding: 12px;
 }
-.header span{
-    padding-right: 0 ;
+
+.header span {
+    padding-right: 0;
 }
 
-.header .options{
+.header .options {
     display: flex;
     gap: 50px;
 }
-.header .options a{
+
+.header .options a {
     font-weight: 500;
     padding: 12px;
     border-bottom: 1px solid #222222;
     font-family: 'Chakra Petch', sans-serif;
     transition: all 0.2s linear;
 }
-.options a:hover{
+
+.options a:hover {
     color: orange;
     border-bottom: 1px solid orange;
 }
-.others{
+
+.others {
     display: flex;
     padding-right: 4px;
 }
-.others input{
+
+.others input {
     padding: 4px 0 4px 4px;
     border: none;
     width: 80%;
-    font-size: 14px;
 }
-.search{
+
+.search {
     background: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     padding: 4px;
-    gap: 8px    
-}
-.others button{
-    padding-left: 12px;
-}
-.others i{
-    font-size: 20px;
-    
+    gap: 8px;
 }
 
+.others button {
+    padding-left: 12px;
+}
+
+.others i {
+    font-size: 20px;
+
+}
+
+
 /*main*/
-.container{
+.container {
     max-width: 1320px;
     padding: 140px 0;
     margin: 0 auto;
+    font-family:'Chakra Petch', sans-serif;
+}
+
+.container span{
+    font-size: 16px;
 }
 
 
-/* .col-4{
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
-    padding: 0 12px;
+.item .ava img{
+	width: 100px;
+	
+	
 }
-.col-6{
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 0 12px;
-}
-.col-8{
-    flex: 0 0 66.66%;
-    max-width: 66.66%;
-    padding: 0 12px;
-} */
 
-.carousel-item{
-    position: relative;
-    
-
-}
-.carousel-item h1{
-    font-size: 48px;
-    font-weight: 600;
+.backToPrd:hover{
     color: #222222;
-    font-family: 'Chakra Petch', sans-serif;
-}
-.carousel-item h2{
-    font-size: 40px;
-    font-weight: 600;
-    color: #222222;
-    font-family: 'Chakra Petch', sans-serif;
-}
-.carousel-item p{
-    font-size: 24px;
-    color: #222222;
-    max-width: 530px;
-    margin: 0 auto;
-}
-.carousel-item .carousel-caption{
-    position: absolute;
-    right: -436px;
-    top: 96px;
 }
 
-.carousel-item .white-color{
-    color: whitesmoke;
+.text-center .quantity{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.quantity-column i {
+    cursor: pointer;
 }
 /*footer*/
-footer{
+footer {
     border-top: 1px solid black;
 }
-.footer{
+
+.footer {
     max-width: 1320px;
     margin: 0 auto;
     margin-top: 24px;
     margin-bottom: 32px;
     display: flex;
     justify-content: space-between;
-    font-family: 'Chakra Petch', sans-serif;
-}    
-
-.footer h3{
-    margin-bottom: 16px;
     
+
 }
 
-.footer li{
+.footer h3 {
+    margin-bottom: 16px;
+
+}
+
+.footer li {
     line-height: 24px;
     margin-bottom: 6px;
 }
-.footer i{
+
+.footer i {
     padding-right: 8px;
 }
 
-.footer a, li, h3 {
-    font-family: 'Chakra Petch', sans-serif;
+::-webkit-scrollbar {
+    width: 8px;
 }
-
