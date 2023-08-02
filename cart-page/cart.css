@@ -110,7 +110,9 @@ span {
     padding: 4px;
     gap: 8px;
 }
-
+.search input{
+    font-size:  14px;
+}
 .others button {
     padding-left: 12px;
 }
