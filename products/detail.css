@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Chakra Petch', sans-serif;
+    outline: 0;
+    scroll-behavior: smooth;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    background-color: #222222;
+    border: none;
+    cursor: pointer;
+}
+
+.col-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 12px;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 12px;
+}
+
+/*header*/
+.header {
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222222;
+    font-size: 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    /* opacity: 0.3; */
+}
+
+.header a {
+    color: white;
+}
+
+.header p,
+span {
+    font-family: 'Pattaya', sans-serif;
+    font-size: 48px;
+    padding: 12px;
+}
+
+.header span {
+    padding-right: 0;
+}
+
+.header .options {
+    display: flex;
+    gap: 50px;
+}
+
+.header .options a {
+    font-weight: 500;
+    padding: 12px;
+    border-bottom: 1px solid #222222;
+    font-family: 'Chakra Petch', sans-serif;
+    transition: all 0.2s linear;
+}
+
+.options a:hover {
+    color: orange;
+    border-bottom: 1px solid orange;
+}
+
+.others {
+    display: flex;
+    padding-right: 4px;
+}
+
+.others input {
+    padding: 4px 0 4px 4px;
+    border: none;
+    width: 80%;
+}
+
+.search {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 4px;
+    gap: 8px;
+}
+
+.others button {
+    padding-left: 12px;
+}
+
+.others i {
+    font-size: 20px;
+
+}
+
+
+/*main*/
+.container {
+    max-width: 1320px;
+    padding: 140px 0;
+    margin: 0 auto;
+}
+
+.optionFilter {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.optionFilter h4 {
+    margin-bottom: 16px;
+}
+
+.optionFilter h4 button {
+    cursor: pointer;
+}
+
+.clickShowFilter {
+    cursor: pointer;
+    padding-left: 12px;
+}
+
+.listItem {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image {
+    padding-top: calc(100%);
+    background: silver no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 14px;
+
+}
+
+.item {
+    margin-bottom: 60px;
+    line-height: 28px;
+    position: relative;
+    transition: all 0.2s linear;
+}
+
+.item:hover {
+    color: #ffb62d;
+}
+
+.item a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.option {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: none;
+    line-height: 36px;
+    width: 200px;
+
+}
+
+.option button {
+    font-size: 16px;
+    background-color: white;
+}
+
+.option li {
+    padding-left: 12px;
+}
+
+.option li button:hover {
+    color: rgb(255, 200, 98);
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.unhide {
+    display: block;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    background-color: white;
+}
+
+.placeHolder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 80px;
+}
+
+.col-3-loading {
+    flex: 0 25%;
+    max-width: 22%;
+    padding: 0 12px;
+}
+
+.skeleton {
+    background-color: antiquewhite;
+    height: 300px;
+
+    /* width: 100%; */
+
+    background:
+        linear-gradient(0.25turn, transparent, #FFF, transparent),
+        linear-gradient(#DDD, #DDD),
+        linear-gradient(#DDD, #DDD),
+        linear-gradient(#DDD, #DDD);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 100% 220px, 100% 130px, 100px 15px, 150px 15px;
+    background-position: -215px 0, 0 0, 15px 150px, 15px 180px;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    to {
+        background-position: 215px 0, 0 0, 15px 150px, 15px 180px;
+    }
+}
+
+/*detail-page*/
+.backToPrd {
+    padding: 12px 0 12px 12px;
+    margin-bottom: 24px;
+}
+
+.backToPrd a {
+    font-size: 18px;
+    font-weight: 300;
+    transition: all 0.2s linear;
+}
+
+.backToPrd a:hover {
+    color: #eb3e3e;
+}
+
+.detail {
+    display: flex;
+}
+
+.add {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.addBtn {
+    padding: 10px 0;
+    border: 2px solid black;
+    border-radius: 8px;
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.addBtn:hover {
+    background-color: #222222;
+    color: white;
+}
+
+.SoldOutBtn {
+    padding: 10px 0;
+    border: 2px solid #eb3e3e;
+    border-radius: 8px;
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: #eb3e3e;
+}
+
+.quantity {
+    flex: 1;
+    border: 2px solid #222;
+    border-radius: 8px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quantity button {
+    border: none;
+    background-color: white;
+}
+
+.quantity i {
+    padding: 0 8px;
+}
+
+.quantity span {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+}
+
+.quantity #quantityNumber {
+    border: none;
+    width: 28px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.detailImage {
+    display: flex;
+    gap: 8px
+}
+
+.avatar {
+    flex: 1;
+}
+
+.avatar img {
+    width: 100%;
+    max-height: 500px;
+}
+
+
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 500px;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.imagePreview {
+    margin-right: 4px;
+}
+
+/*footer*/
+footer {
+    border-top: 1px solid black;
+}
+
+.footer {
+    max-width: 1320px;
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+.footer h3 {
+    margin-bottom: 16px;
+
+}
+
+.footer li {
+    line-height: 24px;
+    margin-bottom: 6px;
+}
+
+.footer i {
+    padding-right: 8px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(241, 241, 241);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: silver;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: grey;
+}

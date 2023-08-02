@@ -99,7 +99,6 @@ function increaseQuantity(id) {
 function deleteItem(id) {
     let confirmDelete = confirm('Bạn muốn xóa sản phẩm này khỏi giỏ hàng ?')
     if (confirmDelete === true) {
-        console.log('aaa')
         let result = getCartLocalStorage()
         if (result === null) return
         let arrAfterFiltered = result.filter(function(x){
