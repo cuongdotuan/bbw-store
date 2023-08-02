@@ -18,7 +18,7 @@ function renderCart() {
 
         tr.innerHTML = `
             <td class="d-flex" style="align-items: center;">
-                <i class="fa-solid fa-circle-xmark" style="color: #ee4a4a; padding-right: 8px; cursor: pointer;"></i>
+                <i onclick="deleteItem(${id})" class="fa-solid fa-circle-xmark" style="color: #ee4a4a; padding-right: 8px; cursor: pointer;"></i>
                 <div class="ava">
                     <img src="${img}" alt="" width = "100">
                 </div>
@@ -52,9 +52,8 @@ function renderCart() {
         document.querySelector('.list-item').appendChild(tr)
     }
     document.getElementById('totalPrice').innerHTML = `
-    <div class="d-flex" style="align-items: center;justify-content: end; padding-bottom: 12px">
-        <p style="margin-right:8px">Tổng tiền:</p> <b style="font-size: 18px">${formatPrice(totalPrice)}đ</b>
-    </div>`
+    <p style="margin-right:8px">Tổng tiền:</p> <b style="font-size: 18px; margin-right: 12px">${formatPrice(totalPrice)}đ</b>
+    `
 
 }
 
@@ -68,13 +67,13 @@ function getCartLocalStorage() {
     }
 }
 function decreaseQuantity(id) {
-    
+
     let result = getCartLocalStorage()
     if (result === null) return
     let item = result.find(function (x) {
         return x.id === id.toString()
     })
-    if(item === null)return
+    if (item === null) return
     if (item.quantity < 2) {
         alert('Lỗi số lượng sản phẩm')
         return
@@ -90,11 +89,26 @@ function increaseQuantity(id) {
     let item = result.find(function (x) {
         return x.id === id.toString()
     })
-    if(item === null)return
+    if (item === null) return
     item.quantity = item.quantity + 1
     localStorage.setItem(CART, JSON.stringify(result))
     renderCart()
 
 }
 
+function deleteItem(id) {
+    let confirmDelete = confirm('Bạn muốn xóa sản phẩm này khỏi giỏ hàng ?')
+    if (confirmDelete === true) {
+        console.log('aaa')
+        let result = getCartLocalStorage()
+        if (result === null) return
+        let arrAfterFiltered = result.filter(function(x){
+            return x.id !== id.toString()
+        })
+        if(arrAfterFiltered === null) return
+        localStorage.setItem(CART, JSON.stringify(arrAfterFiltered))
+        renderCart()
+    }
+
+}
 renderCart()

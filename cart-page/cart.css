@@ -152,6 +152,14 @@ span {
 .quantity-column i {
     cursor: pointer;
 }
+
+#totalPrice{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
+    padding: 16px 0;
+}
 /*footer*/
 footer {
     border-top: 1px solid black;
