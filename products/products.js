@@ -98,7 +98,7 @@ async function renderProducts(products) {
         div.innerHTML = `
         
             <div class="image" style="background-image: url(${imgs[0]});"></div>
-            <h4><a href="/products/detail.html" onclick="detailProduct(${id})"></a>${name}</h4>
+            <h4><a href="./detail.html" onclick="detailProduct(${id})"></a>${name}</h4>
         
             <p>${formatPrice(price)}đ</p>
         
