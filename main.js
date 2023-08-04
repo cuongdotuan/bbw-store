@@ -13,7 +13,8 @@ let productParams = {
     method: 'GET',
     async callback(prds) {
         // await removeLoader(prds)
-        // await renderProducts(prds)
+        await renderProducts(prds)
+        console.log(prds)
     }
 }
 
@@ -30,7 +31,7 @@ async function fetchData(params) {
         })
 
         let data = await res.json()
-        
+
         await callback(data)
     }
     catch (error) {
@@ -38,4 +39,30 @@ async function fetchData(params) {
     }
 
 }
+
 fetchData(productParams)
+
+async function renderProducts(products) {
+    for (let i = 7; i <= 12; i++) {
+        console.log(products[i])
+        let { imgs, name, price, id } = products[i]
+        let div = document.createElement('div')
+        div.classList.add('item')
+        div.classList.add('col-3')
+        div.innerHTML = `
+        <div class="image" style="background-image: url(${imgs});"></div>
+            <h4 style="font-size: 20px;"><a href="./products/detail.html" onclick="setIdPrd(${id})"></a>${name}</h4>
+        
+            <p>${formatPrice(price)}đ</p>
+        
+        `
+        document.querySelector('.renderPrds').appendChild(div)
+        
+    }
+}
+
+async function setIdPrd(id) {
+    let idOfProduct = 'id'
+    localStorage.setItem(idOfProduct , id)
+    
+}
