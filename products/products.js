@@ -98,7 +98,7 @@ async function renderProducts(products) {
         div.innerHTML = `
         
             <div class="image" style="background-image: url(${imgs[0]});"></div>
-            <h4><a href="./detail.html" onclick="detailProduct(${id})"></a>${name}</h4>
+            <h4><a href="./detail.html" onclick="setIdPrd(${id})"></a>${name}</h4>
         
             <p>${formatPrice(price)}đ</p>
         
@@ -199,13 +199,11 @@ function filterByWallet() {
     fetchData(filterParams)
 }
 
-let quantityValue = 1
-async function detailProduct(id) {
+
+async function setIdPrd(id) {
     let idOfProduct = 'id'
     localStorage.setItem(idOfProduct , id)
-    // window.open("http://127.0.0.1:5501/products/detail.html", "_self")
-
-
+    
 }
 
 document.querySelector('.container').appendChild(loading.list())

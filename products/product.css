@@ -385,7 +385,7 @@ footer {
 .footer i {
     padding-right: 8px;
 }
-
+/*scrollbar*/
 ::-webkit-scrollbar {
     width: 8px;
 }

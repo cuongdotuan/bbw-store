@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,21 +7,24 @@
     scroll-behavior: smooth;
 
 }
-a{
-    text-decoration: none; 
+
+a {
+    text-decoration: none;
     color: black;
 }
-li{
+
+li {
     list-style: none;
 }
-button{
+
+button {
     background-color: #222222;
     border: none;
     cursor: pointer;
 }
 
 /*header*/
-.header{
+.header {
     width: 100%;
     padding: 0 24px;
     display: flex;
@@ -36,75 +39,88 @@ button{
     z-index: 100;
     /* opacity: 0.3; */
 }
-.header a{
+
+.header a {
     color: white;
 }
-header p{
+
+header p {
     margin-bottom: 0;
 }
-.header p, span{
+
+.header p,
+span {
     font-family: 'Pattaya', sans-serif;
     font-size: 48px;
     padding: 12px;
 }
-.header span{
-    padding-right: 0 ;
+
+.header span {
+    padding-right: 0;
 }
 
-.header .options{
+.header .options {
     display: flex;
     gap: 50px;
 }
-.header .options a{
+
+.header .options a {
     font-weight: 500;
     padding: 12px;
     border-bottom: 1px solid #222222;
     font-family: 'Chakra Petch', sans-serif;
     transition: all 0.2s linear;
 }
-.options a:hover{
+
+.options a:hover {
     color: orange;
     border-bottom: 1px solid orange;
 }
-.others{
+
+.others {
     display: flex;
     padding-right: 4px;
 }
-.others input{
+
+.others input {
     padding: 4px 0 4px 4px;
     border: none;
     width: 80%;
     font-size: 14px;
 }
-.search{
+
+.search {
     background: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     padding: 4px;
-    gap: 8px    
+    gap: 8px
 }
-.others button{
+
+.others button {
     padding-left: 12px;
 }
-.others i{
+
+.others i {
     font-size: 20px;
-    
+
 }
 
 /*main*/
-.container{
+.container {
     max-width: 1140px;
-    padding: 140px 0;
+    padding: 140px 0 40px 0;
     margin: 0 auto;
 }
 
-.col-6{
+.col-6 {
     flex: 0 0 50%;
     max-width: 50%;
-    padding: 0 12px;
+    
 }
+
 /* .col-4{
     flex: 0 0 33.33%;
     max-width: 33.33%;
@@ -116,55 +132,130 @@ header p{
     max-width: 66.66%;
     padding: 0 12px;
 } */
-.first{
+
+.intro{
+    padding-bottom: 100px;
+}
+.img-caption {
     display: flex;
-}
-.first .img{
-    flex: 1;
-}
-.first .content{
-    flex: 1;
+    gap: 8px;
 }
 
-
-
-.carousel-item{
+.caption {
+    height: 400px;
+    overflow: hidden;
     position: relative;
-    
+    flex: 1;
+}
+
+.fly-in {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: left;
+
+    /* Apply animation to this element */
+    animation: caption 2s ease-out;
+}
+
+@keyframes caption {
+    0% {
+        transform: translateY(200%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.imgs{
+    flex: 1;
+}
+.fly-in p{
+    text-align: justify;
+}
+.caption .fly-in p{
+    line-height: 32px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+.carousel-item {
+    position: relative;
 
 }
-.carousel-item h1{
+
+.carousel-item h1 {
     font-size: 48px;
     font-weight: 600;
     color: #222222;
     font-family: 'Chakra Petch', sans-serif;
 }
-.carousel-item h2{
+
+.carousel-item h2 {
     font-size: 40px;
     font-weight: 600;
     color: #222222;
     font-family: 'Chakra Petch', sans-serif;
 }
-.carousel-item p{
+
+.carousel-item p {
     font-size: 24px;
     color: #222222;
     max-width: 530px;
     margin: 0 auto;
 }
-.carousel-item .carousel-caption{
+
+.carousel-item .carousel-caption {
     position: absolute;
     right: -436px;
     top: 96px;
 }
 
-.carousel-item .white-color{
+.carousel-item .white-color {
     color: whitesmoke;
 }
+
+.renderPrds{
+    display: flex;
+    flex-wrap: wrap;
+}
+.image {
+    padding-top: calc(100%);
+    background: silver no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 14px;
+
+}
+
+.item {
+    margin-bottom: 60px;
+    line-height: 28px;
+    position: relative;
+    transition: all 0.2s linear;
+    padding: 0 12px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.item:hover {
+    color: #ffb62d;
+}
+
+.item a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    
+}
 /*footer*/
-footer{
+footer {
     border-top: 1px solid black;
 }
-.footer{
+
+.footer {
     max-width: 1320px;
     margin: 0 auto;
     margin-top: 24px;
@@ -172,22 +263,50 @@ footer{
     display: flex;
     justify-content: space-between;
     font-family: 'Chakra Petch', sans-serif;
-}    
-
-.footer h3{
-    margin-bottom: 16px;
-    
 }
 
-.footer li{
+.footer h3 {
+    margin-bottom: 16px;
+
+}
+
+.footer li {
     line-height: 24px;
     margin-bottom: 6px;
 }
-.footer i{
+
+.footer i {
     padding-right: 8px;
 }
 
-.footer a, li, h3 {
+.footer a,
+li,
+h3 {
     font-family: 'Chakra Petch', sans-serif;
 }
 
+.carousel-item {
+    transition: transform .3s ease-in-out;
+}
+
+/*scrollbar*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(241, 241, 241);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: silver;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: grey;
+}
