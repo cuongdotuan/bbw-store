@@ -121,6 +121,14 @@ span {
     max-width: 1320px;
     padding: 140px 0;
     margin: 0 auto;
+    position: relative;
+}
+
+.notification {
+    position: absolute;
+    top: 138px;
+    right: 0;
+
 }
 
 .optionFilter {
@@ -260,6 +268,7 @@ span {
 
 .detail {
     display: flex;
+    margin: 36px 0;
 }
 
 .add {
@@ -284,6 +293,10 @@ span {
     color: white;
 }
 
+.addBtn p {
+    margin-bottom: 0;
+}
+
 .SoldOutBtn {
     padding: 10px 0;
     border: 2px solid #eb3e3e;
@@ -295,7 +308,9 @@ span {
     background-color: rgb(255, 255, 255);
     color: #eb3e3e;
 }
-
+.SoldOutBtn p{
+    margin-bottom: 0;
+}
 .quantity {
     flex: 1;
     border: 2px solid #222;
@@ -342,7 +357,6 @@ span {
 }
 
 
-
 .preview {
     display: flex;
     flex-direction: column;
@@ -356,6 +370,7 @@ span {
     margin-right: 4px;
 }
 
+
 /*footer*/
 footer {
     border-top: 1px solid black;
@@ -368,7 +383,7 @@ footer {
     margin-bottom: 32px;
     display: flex;
     justify-content: space-between;
-    
+
 
 }
 
