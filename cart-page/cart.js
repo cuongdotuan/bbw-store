@@ -7,10 +7,17 @@ function formatPrice(price) {
 function renderCart() {
     let totalPrice = 0
     let result = getCartLocalStorage()
+    
     if (result === null) return
+    if(result.length === 0){
+        document.querySelector('.container').innerHTML =`
+        <h1 style="margin-bottom: 32px; text-align: center; font-weight: 500;">Giỏ hàng của bạn</h1>
+        <h4 style="text-align: center;">Giỏ hàng hiện tại đang trống !!!</h4>
+        `
+        return
+    }
     document.querySelector('.list-item').innerHTML = ''
     for (let item of result) {
-
         let { id, name, price, img, quantity } = item
         let totalPriceOfOne = price * quantity
         totalPrice = totalPrice + totalPriceOfOne
