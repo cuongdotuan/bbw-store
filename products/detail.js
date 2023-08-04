@@ -6,7 +6,7 @@ const endPoint = {
 let idOfProduct = 'id'
 let productId = localStorage.getItem(idOfProduct)
 let quantityValue = 1
-
+let timeoutId = null
 
 function formatPrice(price) {
     return price.toLocaleString('vi-VN');
@@ -44,8 +44,9 @@ function renderDetail(product) {
         ? `<div class="SoldOutBtn"><p>----Sold out----</p></div>`
         : `<div class="addBtn"><p>Add to cart</p></div>`
 
-    document.querySelector('.container').innerHTML = `
-    <div class="backToPrd"><a href="products.html">Back To Products </a></div>
+    document.querySelector('.detail-product').innerHTML = `
+    
+    
     <div class="detail">
 
         <div class="detailImage col-6">
@@ -76,7 +77,8 @@ function renderDetail(product) {
             
         </div>
     </div>
-    
+    <a href="products.html" style="color: #3232ff;" class="backToPrd"><i
+        class="fa-solid fa-backward" style="color: #3232ff; margin-right: 8px;"></i>Xem thêm sản phẩm</a>
     `
     document.querySelector(".addBtn").addEventListener("click", function () {
         addToCart(product)
@@ -145,11 +147,13 @@ function addToCart(data) {
                 }
                 cart.push(newItem)
                 localStorage.setItem(CART, JSON.stringify(cart))
+                
+            
             }
             else {
                 exitsItem.quantity = exitsItem.quantity + quantityValue
                 localStorage.setItem(CART, JSON.stringify(cart))
-
+                
             }
 
         } catch (error) {
@@ -165,7 +169,19 @@ function addToCart(data) {
             localStorage.setItem(CART, JSON.stringify(cart))
         }
 
+        
     }
+    document.querySelector('.notification').style.display = 'block'
+    timeoutId = setTimeout(() => {
+        displayNone()
+    }, 3000)
+    
 }
+
+function displayNone(){
+    document.querySelector('.notification').style.display = 'none'
+    clearTimeout(timeoutId)
+}
+
 
 fetchData()
