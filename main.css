@@ -118,7 +118,7 @@ span {
 .col-6 {
     flex: 0 0 50%;
     max-width: 50%;
-    
+
 }
 
 /* .col-4{
@@ -133,12 +133,13 @@ span {
     padding: 0 12px;
 } */
 
-.intro{
+.intro {
     padding-bottom: 100px;
 }
+
 .img-caption {
     display: flex;
-    gap: 8px;
+    gap: 50px;
 }
 
 .caption {
@@ -170,16 +171,24 @@ span {
     }
 }
 
-.imgs{
+.imgs {
     flex: 1;
 }
-.fly-in p{
+
+.fly-in p {
     text-align: justify;
 }
-.caption .fly-in p{
+
+.fly-in h3 {
+    font-weight: 600;
+    font-size: 48px;
+}
+
+.caption .fly-in p {
     line-height: 32px;
     font-family: 'Chakra Petch', sans-serif;
 }
+
 .carousel-item {
     position: relative;
 
@@ -216,13 +225,26 @@ span {
     color: whitesmoke;
 }
 
-.renderPrds{
+.header-showPrds {
+    background-color: whitesmoke;
+    text-align: center;
+    margin: 0 12px 24px 12px;
+    padding: 6px 0;
+}
+
+.header-showPrds h4 {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.renderPrds {
     display: flex;
     flex-wrap: wrap;
+    margin: 28px 0;
 }
+
 .image {
     padding-top: calc(100%);
-    background: silver no-repeat center;
+    background: whitesmoke no-repeat center;
     background-size: cover;
     border-radius: 10px;
     margin-bottom: 14px;
@@ -235,7 +257,7 @@ span {
     position: relative;
     transition: all 0.2s linear;
     padding: 0 12px;
-    font-family: 'Chakra Petch', sans-serif;
+
 }
 
 .item:hover {
@@ -248,8 +270,14 @@ span {
     width: 100%;
     top: 0;
     left: 0;
-    
+
 }
+
+.backToPrd {
+    padding: 12px 0 12px 12px;
+    margin-bottom: 24px;
+}
+
 /*footer*/
 footer {
     border-top: 1px solid black;
