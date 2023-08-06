@@ -43,7 +43,7 @@ async function fetchData(params) {
 fetchData(productParams)
 
 async function renderProducts(products) {
-    for (let i = 7; i <= 12; i++) {
+    for (let i = 8; i <= 11; i++) {
         console.log(products[i])
         let { imgs, name, price, id } = products[i]
         let div = document.createElement('div')
