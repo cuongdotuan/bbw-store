@@ -267,22 +267,7 @@ span {
     margin-bottom: 16px;
 }
 
-.addBtn {
-    padding: 10px 0;
-    border: 2px solid black;
-    border-radius: 8px;
-    flex: 5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
 
-.addBtn:hover {
-    background-color: #222222;
-    color: white;
-}
 
 .SoldOutBtn {
     padding: 10px 0;
