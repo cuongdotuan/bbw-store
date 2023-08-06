@@ -278,21 +278,22 @@ span {
 
 .addBtn {
     padding: 10px 0;
-    border: 2px solid black;
+    border: 2px solid #ffb52b;
     border-radius: 8px;
     flex: 5;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    background-color: #000000;
+    color: #fff;
+    transition: 0.2s ease-in-out;;
 }
 
-.addBtn:hover {
-    background-color: #222222;
-    color: white;
+.addBtn:hover{
+    background-color: #ffb52b;
+    border-color: #000000 ;
 }
-
 .addBtn p {
     margin-bottom: 0;
 }
