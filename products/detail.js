@@ -46,7 +46,8 @@ function renderDetail(product) {
 
     document.querySelector('.detail-product').innerHTML = `
     
-    
+    <a href="products.html" style="color: #3232ff;" class="backToPrd"><i
+        class="fa-solid fa-backward" style="color: #3232ff; margin-right: 8px;"></i>Xem thêm sản phẩm</a>
     <div class="detail">
 
         <div class="detailImage col-6">
@@ -77,8 +78,7 @@ function renderDetail(product) {
             
         </div>
     </div>
-    <a href="products.html" style="color: #3232ff;" class="backToPrd"><i
-        class="fa-solid fa-backward" style="color: #3232ff; margin-right: 8px;"></i>Xem thêm sản phẩm</a>
+    
     `
     document.querySelector(".addBtn").addEventListener("click", function () {
         addToCart(product)
