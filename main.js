@@ -50,8 +50,8 @@ async function renderProducts(products) {
         div.classList.add('item')
         div.classList.add('col-3')
         div.innerHTML = `
-        <div class="image" style="background-image: url(${imgs});"></div>
-            <h4 style="font-size: 20px;"><a href="./products/detail.html" onclick="setIdPrd(${id})"></a>${name}</h4>
+        <div class="image" style="background-image: url(${imgs[0]});"></div>
+            <h4 style="font-size: 20px;"><a href="detail.html" onclick="setIdPrd(${id})"></a>${name}</h4>
         
             <p>${formatPrice(price)}đ</p>
         

@@ -10,43 +10,60 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;500;600&family=Lexend+Peta:wght@600&family=Pattaya&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/x-icon" href="../photos/icon/shop.ico">
-    <link rel="stylesheet" href="product.css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="icon" type="image/x-icon" href="/photos/icon/shop.ico">
+    <link rel="stylesheet" href="/cart.css">
+    <!-- <base href="/[repo]/"> -->
 </head>
 
 <body>
     <header>
-
         <div class="header">
-            <a href="../index.html">
+            <a href="/index.html">
                 <p><span style="color: red;">BBW</span>Store</p>
             </a>
             <div class="options">
-                <a href="../index.html">Home</a>
-                <a href="products.html">Products</a>
+                <a href="/index.html">Home</a>
+                <a href="/products/products.html">Products</a>
                 <a href="#">Contact</a>
             </div>
             <div class="others">
-                <div class="search"><i class="fa-solid fa-magnifying-glass" style="color: #adadad;"></i><input
-                        type="text" placeholder="Tìm kiếm"></div>
-                <button>
-                    <a href="../cart-page/cart.html"><i class="fa-solid fa-cart-shopping" style="color: #fff;"></i></a>                  
-                </button>
+                
+                <button><i class="fa-solid fa-cart-shopping" style="color: #fff;"></i></button>
             </div>
         </div>
     </header>
 
     <main>
         <div class="container">
+            <h1 style="margin-bottom: 32px; text-align: center; font-weight: 500;">Giỏ hàng của bạn</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="text-center">Sản phẩm</th>
+                        <th class="text-center">Giá</th>
+                        <th class="text-center">Số lượng</th>
+                        <th class="text-center">Tổng</th>
+                    </tr>
+                </thead>
+                <tbody class="list-item">
 
+                </tbody>
+            </table>
+            <div id="totalPrice">
 
+            </div>
+            <a href="/products.html" style="color: #3232ff;" class="backToPrd"><i
+                    class="fa-solid fa-backward" style="color: #3232ff; margin-right: 8px;"></i>Xem thêm sản phẩm</a>
         </div>
-        
     </main>
+
 
     <footer>
         <div class="footer">
@@ -69,10 +86,10 @@
             <div class="information">
                 <h3>Thông tin</h3>
                 <ul>
-                    <li><a href="../policies/policy.html">Chính sách bảo hành</a></li>
-                    <li><a href="../policies/policy.html">Hình thức vận chuyển</a></li>
-                    <li><a href="../policies/policy.html">Hình thức thanh toán</a></li>
-                    <li><a href="../policies/policy.html">Đổi trả sản phẩm</a></li>
+                    <li><a href="/policy.html">Chính sách bảo hành</a></li>
+                    <li><a href="/policy.html">Hình thức vận chuyển</a></li>
+                    <li><a href="/policy.html">Hình thức thanh toán</a></li>
+                    <li><a href="/policy.html">Đổi trả sản phẩm</a></li>
                 </ul>
             </div>
             <div class="link">
@@ -88,7 +105,10 @@
             </div>
         </div>
     </footer>
-    <script src="products.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="cart.js"></script>
 </body>
 
 </html>

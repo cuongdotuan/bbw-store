@@ -234,6 +234,7 @@ span {
 
 .header-showPrds h4 {
     font-family: 'Chakra Petch', sans-serif;
+    margin-bottom: 0;
 }
 
 .renderPrds {
