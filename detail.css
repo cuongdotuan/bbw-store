@@ -371,7 +371,9 @@ span {
     margin-right: 4px;
 }
 
-
+.information ul{
+    padding-left: 0;
+}
 /*footer*/
 footer {
     border-top: 1px solid black;
