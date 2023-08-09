@@ -2,7 +2,7 @@ const apiUrl = 'https://648704aabeba6297278facac.mockapi.io/'
 const endPoint = {
     products: 'products'
 }
-
+const CART = 'CART'
 function formatPrice(price) {
     return price.toLocaleString('vi-VN');
 }
@@ -44,7 +44,6 @@ fetchData(productParams)
 
 async function renderProducts(products) {
     for (let i = 8; i <= 11; i++) {
-        console.log(products[i])
         let { imgs, name, price, id } = products[i]
         let div = document.createElement('div')
         div.classList.add('item')
@@ -65,4 +64,28 @@ async function setIdPrd(id) {
     let idOfProduct = 'id'
     localStorage.setItem(idOfProduct , id)
     
+}
+
+function getCartLocalStorage() {
+    let cartData = localStorage.getItem(CART)
+    try {
+        let products = JSON.parse(cartData)
+        return products
+    } catch (error) {
+        return null
+    }
+}
+getCartLocalStorage()
+
+const quantityProducts = getCartLocalStorage() === null ? 0 : getCartLocalStorage().length
+
+document.querySelector('.cart').innerHTML = `
+    
+    <i class="fa-solid fa-cart-shopping" style="color: #fff;"></i>
+    <p>Giỏ hàng | ${quantityProducts}</p>
+`
+
+
+function goToCart(){
+    window.open("cart.html", "_self")
 }

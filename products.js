@@ -1,8 +1,10 @@
+
+
 const apiUrl = 'https://648704aabeba6297278facac.mockapi.io/'
 const endPoint = {
     products: 'products'
 }
-
+const CART = 'CART'
 const loading = {
     list() {
         let div = document.createElement('div')
@@ -64,6 +66,8 @@ async function removeLoader() {
         document.querySelector('.placeHolder').remove()
     }
 }
+
+
 
 async function renderProducts(products) {
     // document.querySelector('.container').innerHTML = ''
@@ -205,5 +209,30 @@ async function setIdPrd(id) {
     localStorage.setItem(idOfProduct , id)
     
 }
+
+function getCartLocalStorage() {
+    let cartData = localStorage.getItem(CART)
+    try {
+        let products = JSON.parse(cartData)
+        return products
+    } catch (error) {
+        return null
+    }
+}
+getCartLocalStorage()
+
+const quantityProducts = getCartLocalStorage() === null ? 0 : getCartLocalStorage().length
+
+document.querySelector('.cart').innerHTML = `
+    
+    <i class="fa-solid fa-cart-shopping" style="color: #fff;"></i>
+    <p>Giỏ hàng | ${quantityProducts}</p>
+`
+
+
+function goToCart(){
+    window.open("cart.html", "_self")
+}
+
 
 document.querySelector('.container').appendChild(loading.list())

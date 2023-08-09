@@ -8,6 +8,8 @@ let productId = localStorage.getItem(idOfProduct)
 let quantityValue = 1
 let timeoutId = null
 
+const CART = 'CART'
+
 function formatPrice(price) {
     return price.toLocaleString('vi-VN');
 }
@@ -113,7 +115,7 @@ function increaseInputNumber() {
 
 }
 
-const CART = 'CART'
+
 
 function addToCart(data) {
     let { id, name, price, imgs } = data
@@ -136,6 +138,7 @@ function addToCart(data) {
         try {
             const parsedCart = JSON.parse(currentCart)
             const cart = parsedCart
+            console.log(cart)
             const exitsItem = cart.find(i => i.id === id)
             if (!exitsItem) {
                 const newItem = {
@@ -147,7 +150,7 @@ function addToCart(data) {
                 }
                 cart.push(newItem)
                 localStorage.setItem(CART, JSON.stringify(cart))
-                
+                renderNumer()
             
             }
             else {
@@ -181,6 +184,31 @@ function addToCart(data) {
 function displayNone(){
     document.querySelector('.notification').style.display = 'none'
     clearTimeout(timeoutId)
+}
+
+function getCartLocalStorage() {
+    let cartData = localStorage.getItem(CART)
+    try {
+        let products = JSON.parse(cartData)
+        return products
+    } catch (error) {
+        return null
+    }
+}
+getCartLocalStorage()
+
+function renderNumer(){
+    const quantityProducts = getCartLocalStorage() === null ? 0 : getCartLocalStorage().length
+    document.querySelector('.cart').innerHTML = `
+    
+    <i class="fa-solid fa-cart-shopping" style="color: #fff;"></i>
+    <p>Giỏ hàng | ${quantityProducts}</p>
+`
+}
+renderNumer()
+
+function goToCart(){
+    window.open("cart.html", "_self")
 }
 
 

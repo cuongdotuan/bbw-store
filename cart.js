@@ -1,5 +1,4 @@
-let CART = "CART"
-
+const CART ="CART"
 
 function formatPrice(price) {
     return price.toLocaleString('vi-VN');
@@ -8,17 +7,14 @@ function renderCart() {
     let totalPrice = 0
     let result = getCartLocalStorage()
     
-    // if (result === null) {
-    //     document.querySelector('.container').innerHTML =`
-    //     <h1 style="margin-bottom: 32px; text-align: center; font-weight: 500;">Giỏ hàng của bạn</h1>
-    //     <h4 style="text-align: center;">Giỏ hàng hiện tại đang trống !!!</h4>
-    //     `
-    //     return
-    // }
+    
     if(result === null || result.length === 0){
         document.querySelector('.container').innerHTML =`
+        
         <h1 style="margin-bottom: 32px; text-align: center; font-weight: 500;">Giỏ hàng của bạn</h1>
-        <h4 style="text-align: center;">Giỏ hàng hiện tại đang trống !!!</h4>
+        <h4 style="text-align: center; margin-bottom: 48px">Giỏ hàng hiện tại đang trống !!!</h4>
+        <a href="products.html" style="color: #3232ff;" class="backToPrd"><i
+                    class="fa-solid fa-backward" style="color: #3232ff; margin-right: 8px;"></i>Xem thêm sản phẩm</a>
         `
         return
     }
@@ -79,6 +75,8 @@ function getCartLocalStorage() {
         return null
     }
 }
+getCartLocalStorage()
+
 function decreaseQuantity(id) {
 
     let result = getCartLocalStorage()
@@ -120,7 +118,25 @@ function deleteItem(id) {
         if(arrAfterFiltered === null) return
         localStorage.setItem(CART, JSON.stringify(arrAfterFiltered))
         renderCart()
+        renderNumer()
     }
 
+}
+
+
+
+function renderNumer(){
+    const quantityProducts = getCartLocalStorage() === null ? 0 : getCartLocalStorage().length
+    document.querySelector('.cart').innerHTML = `
+    
+    <i class="fa-solid fa-cart-shopping" style="color: #fff;"></i>
+    <p>Giỏ hàng | ${quantityProducts}</p>
+`
+}
+renderNumer()
+
+
+function goToCart(){
+    window.open("cart.html", "_self")
 }
 renderCart()

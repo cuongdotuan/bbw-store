@@ -250,6 +250,23 @@ span {
     }
 }
 
+.cart{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cart i {
+    font-size: 20px;
+}
+.cart p{
+    font-size: 20px;
+    font-family: 'Chakra Petch', sans-serif;
+    margin-bottom: 0
+    ;
+}
+
 /*detail-page*/
 .backToPrd {
     padding: 12px 0 12px 12px;
@@ -290,10 +307,7 @@ span {
     transition: 0.2s ease-in-out;;
 }
 
-.addBtn:hover{
-    background-color: #ffb52b;
-    border-color: #000000 ;
-}
+
 .addBtn p {
     margin-bottom: 0;
 }

@@ -242,103 +242,19 @@ span {
     }
 }
 
-/*detail-page*/
-.backToPrd {
-    padding: 12px 0 12px 12px;
-    margin-bottom: 24px;
-}
-
-.backToPrd a {
-    font-size: 18px;
-    font-weight: 300;
-    transition: all 0.2s linear;
-}
-
-.backToPrd a:hover {
-    color: #eb3e3e;
-}
-
-.detail {
+.cart{
     display: flex;
-}
-
-.add {
-    display: flex;
-    margin-bottom: 16px;
-}
-
-
-
-.SoldOutBtn {
-    padding: 10px 0;
-    border: 2px solid #eb3e3e;
-    border-radius: 8px;
-    flex: 5;
-    display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    background-color: rgb(255, 255, 255);
-    color: #eb3e3e;
-}
-
-.quantity {
-    flex: 1;
-    border: 2px solid #222;
-    border-radius: 8px;
-    margin-right: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.quantity button {
-    border: none;
-    background-color: white;
-}
-
-.quantity i {
-    padding: 0 8px;
-}
-
-.quantity span {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 16px;
-}
-
-.quantity #quantityNumber {
-    border: none;
-    width: 28px;
-    text-align: center;
-    font-size: 16px;
-}
-
-.detailImage {
-    display: flex;
-    gap: 8px
-}
-
-.avatar {
-    flex: 1;
-}
-
-.avatar img {
-    width: 100%;
-    max-height: 500px;
-}
-
-
-
-.preview {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    max-height: 500px;
-    gap: 4px;
     cursor: pointer;
 }
 
-.imagePreview {
-    margin-right: 4px;
+.cart i {
+    font-size: 20px;
+}
+.cart p{
+    font-size: 20px;
+    font-family: 'Chakra Petch', sans-serif;;
 }
 
 /*footer*/
