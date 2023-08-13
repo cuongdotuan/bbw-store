@@ -225,6 +225,7 @@ async function postOrder(order) {
     try {
         await fetch(apiUrl,{
             method:"POST",
+            headers: {'content-type':'application/json'},
             body: JSON.stringify(order)
     })
     } catch (error) {

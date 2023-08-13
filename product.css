@@ -85,35 +85,6 @@ span {
     border-bottom: 1px solid orange;
 }
 
-.others {
-    display: flex;
-    padding-right: 4px;
-}
-
-.others input {
-    padding: 4px 0 4px 4px;
-    border: none;
-    width: 80%;
-}
-
-.search {
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    padding: 4px;
-    gap: 8px;
-}
-
-.others button {
-    padding-left: 12px;
-}
-
-.others i {
-    font-size: 20px;
-
-}
 
 
 /*main*/

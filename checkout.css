@@ -7,9 +7,7 @@
     scroll-behavior: smooth;
 
 }
-p{
-    margin-bottom: 0;
-}
+
 a {
     text-decoration: none;
     color: black;
@@ -24,9 +22,7 @@ button {
     border: none;
     cursor: pointer;
 }
-.d-flex{
-    display: flex;
-}
+
 .col-3 {
     flex: 0 0 25%;
     max-width: 25%;
@@ -38,8 +34,13 @@ button {
     max-width: 50%;
     padding: 0 12px;
 }
-.text-center{
-    text-align: center;
+
+.d-flex {
+    display: flex;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
 }
 
 /*header*/
@@ -68,6 +69,7 @@ span {
     font-family: 'Pattaya', sans-serif;
     font-size: 48px;
     padding: 12px;
+    margin-bottom: 0;
 }
 
 .header span {
@@ -92,7 +94,7 @@ span {
     border-bottom: 1px solid orange;
 }
 
-.cart{
+.cart {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -102,65 +104,129 @@ span {
 .cart i {
     font-size: 20px;
 }
-.cart p{
-    font-size: 20px;
-    font-family: 'Chakra Petch', sans-serif;;
-}
 
+.cart p {
+    font-size: 20px;
+    font-family: 'Chakra Petch', sans-serif;
+    margin-bottom: 0;
+}
 
 /*main*/
-.container {
-    max-width: 1320px;
-    padding: 140px 0;
-    margin: 0 auto;
-    font-family:'Chakra Petch', sans-serif;
+.shipping-details {
+    flex: 1;
 }
-
-.container span{
-    font-size: 16px;
+.shipping-details h1{
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 600;
 }
-
-
-.item .ava img{
-	width: 100px;
-}
-
-.backToPrd:hover{
-    color: #222222;
-}
-
-.text-center .quantity{
-    display: flex;
-    justify-content: space-around;
+.full-name {
+    justify-content: space-between;
     align-items: center;
+    gap: 20px;
+    
 }
-.quantity-column i {
+
+.full-name input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #bbbbbb;
+}
+
+.phone-number input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #bbbbbb;
+}
+
+.city select{
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #bbbbbb;
+}
+.town-ward{
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    
+}
+.town-ward input{
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #bbbbbb;
+}
+
+.note input{
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #bbbbbb;
+}
+
+.pay{
+    width: 90%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #bbbbbb;
+    margin: 50px auto;
+    background-color: #008cff;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
-
-#totalPrice{
-    display: flex;
-    justify-content: end;
-    margin-bottom: 20px;
-    background-color: whitesmoke;
-    padding: 16px 0;
+.pay:hover{
+    background-color: #0051ff;
 }
 
-.go-to-other-link{
-    justify-content: space-between;
-    align-items: center;
+.list-item {
+    overflow-y: auto; 
+    max-height: 400px;
+    margin-bottom: 32px;
 }
-
-.checkout{
-    background-color: #008cff;
-    padding: 8px 12px;
+.img{
+    flex: 1;
+    margin-right: 12px;
     border-radius: 8px;
+    border: 1px solid #dadada;
+}
+.img img{
+    border-radius: 8px;
+}
+.name{
+    flex: 5;
+    align-items: center;
+}
+.name p{
+    margin-bottom: 0;
+    padding: 8px;
+}
+.price{
+    flex: 2;
+    align-items: center;
+}
+.price p{
+    margin-bottom: 0;
+}
+
+.item{
+    margin-bottom: 16px;
+}
+
+.total-price div{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 4px 0;
 }
-.checkout a{
-    color: white;
+.total-price span{
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 18px;
+    padding: 0;
 }
 /*footer*/
 footer {
@@ -174,13 +240,17 @@ footer {
     margin-bottom: 32px;
     display: flex;
     justify-content: space-between;
-    
+
 
 }
 
 .footer h3 {
     margin-bottom: 16px;
 
+}
+
+.footer ul {
+    margin-bottom: 0;
 }
 
 .footer li {
@@ -192,7 +262,6 @@ footer {
     padding-right: 8px;
 }
 
-/*scrollbar*/
 ::-webkit-scrollbar {
     width: 8px;
 }
