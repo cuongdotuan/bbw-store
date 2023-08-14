@@ -1,5 +1,10 @@
 const CART = 'CART'
 
+renderCartNumber()
+renderListItem()
+renderSubmitForm()
+renderPrices()
+
 function formatPrice(price) {
     const formattedPrice = price.toLocaleString('vi-VN')
     return formattedPrice;
@@ -108,11 +113,12 @@ function renderSubmitForm() {
             })
             submitData.products = filterProducts
 
-            // [{id: 1, name: "K"}, {id: 2,  name: "b"}].map((item) => ({item.id}))
-            // [{id: 1}, {id: 2,  name: "b"}]
-
             postOrder(submitData)
-            
+
+            alert('Bạn đã đặt hàng thành công!!')
+            window.open("index.html", "_self")
+            localStorage.clear();
+
 
         } catch (error) {
             console.log(error.message)
@@ -234,7 +240,3 @@ async function postOrder(order) {
     
 }
 
-renderCartNumber()
-renderListItem()
-renderSubmitForm()
-renderPrices()

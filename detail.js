@@ -133,6 +133,7 @@ function addToCart(data) {
         const cart = [newItem]
 
         localStorage.setItem(CART, JSON.stringify(cart))
+        renderNumer()
     }
     else {
         try {
