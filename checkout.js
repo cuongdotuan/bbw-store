@@ -87,10 +87,10 @@ function renderSubmitForm() {
         const finalPrice = getToTalPrice() + shippingFee
 
         document.getElementById('shippingFee').innerHTML = `
-        <span>Phí ship</span><span>${formatPrice(shippingFee)}</span>
+        <span>Phí ship</span><span>${formatPrice(shippingFee)} đ</span>
         `
         document.getElementById('finalPrice').innerHTML = `
-        <h5>TỔNG THIỆT HẠI</h5><h5><b>${formatPrice(finalPrice)}</b></h5>
+        <h5>TỔNG THIỆT HẠI</h5><h5><b>${formatPrice(finalPrice)} đ</b></h5>
         `
     })
 
@@ -154,7 +154,7 @@ function renderListItem() {
         div.innerHTML = `
         <div class="img"><img src=${img} alt="" style="width: 75px;"></div>
         <div class="name d-flex"><p><b>${name}</b></p>x<p><b>${quantity}</b></p></div>
-        <div class="price d-flex"><p>${formatPrice(price * quantity)}đ</p></div>
+        <div class="price d-flex"><p>${formatPrice(price * quantity)} đ</p></div>
         `
         document.querySelector('.list-item').appendChild(div)
     }
@@ -205,7 +205,7 @@ function validate(data) {
 function renderPrices() {
     const totalPrice = getToTalPrice()
     document.querySelector('.total-price').innerHTML = `
-    <div><span>Tổng tiền</span><span>${formatPrice(totalPrice)}đ</span></div>
+    <div><span>Tổng tiền</span><span>${formatPrice(totalPrice)} đ</span></div>
     <div id="shippingFee"><span>Phí ship</span><span></span></div>
     <div id="finalPrice"><h5>TỔNG THIỆT HẠI</h5><h5><b></b></h5></div>
 `
